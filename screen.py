@@ -15,3 +15,32 @@ class Screen(tk.Frame):
         self.label.grid(row=0, column=1, columnspan=2, padx=10, pady=10)
         self.entry.grid(row=1, column=1, padx=10, pady=10)
         
+    def set_state(self, state):
+        # прибрати усі елементи
+        self.button1.grid_remove()
+        self.button2.grid_remove()
+        self.label.grid_remove()
+        self.entry.grid_remove()
+        
+        if state == "buttons":
+            self.button1.grid()
+            self.button2.grid()
+        elif state == "text":
+            self.label.config(text="Text")
+            self.label.grid()
+        elif state == "text_and_input":
+            self.label.config(text="Text")
+            self.label.grid()
+            self.entry.grid()
+        elif state == "text_and_2_buttons":
+            self.label.config(text="Text")
+            self.label.grid()
+            self.button1.grid()
+            self.button2.grid()
+        elif state == "text_and_entry_and_2_buttons":
+            self.label.config(text="Text")
+            self.label.grid()
+            self.entry.grid()
+            self.button1.grid()
+            self.button2.grid()
+
