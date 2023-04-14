@@ -6,6 +6,8 @@ class Screen(tk.Frame):
 
         self.button1 = tk.Button(self, text="Button 1")
         self.button2 = tk.Button(self, text="Button 2")
+        self.button3 = tk.Button(self, text="Button 3")
+        self.button4 = tk.Button(self, text="Button 4")
         self.label = tk.Label(self, text="Label")
         self.entry = tk.Entry(self, state="disabled")
         
@@ -38,6 +40,8 @@ class Screen(tk.Frame):
             self.button1.grid()
             self.button2.grid()
         elif state == "text":
+            self.button3.grid()
+            self.button4.grid()
             self.label.config(text="Text")
             self.label.grid()
         elif state == "text_and_input":
