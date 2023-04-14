@@ -37,6 +37,14 @@ class Menu:
         # фрейм для кнопок
         self.pinpad = tk.Frame(self.mainframe, width=200, height=200, relief=tk.RAISED, borderwidth=1)
         self.pinpad.grid(column=0,row=3)
+
+        # нумеровані кнопки
+        for i in range(3):
+            for j in range(3):
+                value = i * 3 + j + 1
+                button = tk.Button(self.pinpad, text=str(value), width=10, height=2, command=lambda v=str(value): self.update_screen(v))
+                button.grid(row=i, column=j, padx=5, pady=5)
+
         # видавач готівки
         self.cash_dispenser = tk.Label(self.mainframe, text="Видавач готівки", width=40, height=2, relief="sunken")
         self.cash_dispenser.grid(column=0,row=4)
