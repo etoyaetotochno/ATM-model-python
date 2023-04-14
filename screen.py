@@ -7,7 +7,7 @@ class Screen(tk.Frame):
         self.button1 = tk.Button(self, text="Button 1")
         self.button2 = tk.Button(self, text="Button 2")
         self.label = tk.Label(self, text="Label")
-        self.entry = tk.Entry(self)
+        self.entry = tk.Entry(self, state="disabled")
         
         # розмітка для елементів
         self.button1.grid(row=0, column=0, padx=10, pady=10)
@@ -18,6 +18,15 @@ class Screen(tk.Frame):
         # початковий стан
         self.set_state("buttons")
         
+    def set_entry_text(self, text, mode):
+        self.entry.configure(state="normal")
+        if (mode == "d"):
+            self.entry.delete(0, tk.END)
+            self.entry.insert(0, text)
+        elif (mode == "a"):
+            self.entry.insert(0, text)
+        self.entry.configure(state="disabled")
+
     def set_state(self, state):
         # прибрати усі елементи
         self.button1.grid_remove()
