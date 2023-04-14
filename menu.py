@@ -17,6 +17,10 @@ class Menu:
         #фрейм для вмісту екрану
         self.screen_frame = ttk.Frame(self.screen_place, width=200, height=200, relief=tk.RAISED, borderwidth=1)
         self.screen_frame.grid(column=1, row=0, rowspan=4, sticky="nsew")
+        self.screen_frame.columnconfigure(0, weight=1)
+        self.screen_frame.rowconfigure(0, weight=4)
+        self.screen_frame.grid_propagate(False)
+       
         # екран
         self.screen = Screen(self.screen_frame)
         self.screen.grid(row=0, column=0, rowspan=4, sticky="nsew")
