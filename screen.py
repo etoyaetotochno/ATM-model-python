@@ -8,6 +8,8 @@ class Screen(tk.Frame):
         self.button2 = tk.Button(self, text="Button 2", state="disabled")
         self.button3 = tk.Button(self, text="Button 3", state="disabled")
         self.button4 = tk.Button(self, text="Button 4", state="disabled")
+        self.button5 = tk.Button(self, text="Button 5", state="disabled")
+        self.button6 = tk.Button(self, text="Button 6", state="disabled")
         self.label = tk.Label(self, text="Label")
         self.entry = tk.Entry(self, state="disabled")
         
