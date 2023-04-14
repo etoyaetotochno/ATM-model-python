@@ -18,8 +18,8 @@ class Screen(tk.Frame):
         self.entry.grid(row=1, column=1, padx=10, pady=10)
         
         # початковий стан
-        self.set_state("buttons")
-        
+        self.set_state("4B")
+
     def set_entry_text(self, text, mode):
         self.entry.configure(state="normal")
         if (mode == "d"):
@@ -36,24 +36,24 @@ class Screen(tk.Frame):
         self.label.grid_remove()
         self.entry.grid_remove()
         
-        if state == "buttons":
+        if state == "4B":
             self.button1.grid()
             self.button2.grid()
-        elif state == "text":
             self.button3.grid()
             self.button4.grid()
+        elif state == "T":
             self.label.config(text="Text")
             self.label.grid()
-        elif state == "text_and_input":
+        elif state == "TE":
             self.label.config(text="Text")
             self.label.grid()
             self.entry.grid()
-        elif state == "text_and_2_buttons":
+        elif state == "T2B":
             self.label.config(text="Text")
             self.label.grid()
             self.button1.grid()
             self.button2.grid()
-        elif state == "text_and_entry_and_2_buttons":
+        elif state == "TE2B":
             self.label.config(text="Text")
             self.label.grid()
             self.entry.grid()
