@@ -69,11 +69,11 @@ class Menu:
     def update_screen(self, value):
         print(f"Button {value} clicked")
         if (value=="1"):
-            self.screen.set_state("buttons")
+            self.screen.set_state("4B")
         elif (value=="2"):
-            self.screen.set_state("text_and_input")
+            self.screen.set_state("TE")
         elif (value=="3"):
-            self.screen.set_state("text_and_2_buttons")
+            self.screen.set_state("T2B")
         elif (value=="4"):
-            self.screen.set_state("text_and_entry_and_2_buttons")
+            self.screen.set_state("TE2B")
 
