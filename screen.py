@@ -18,6 +18,8 @@ class Screen(tk.Frame):
         self.button2.grid(row=1, column=0, padx=10, pady=10)
         self.label.grid(row=0, column=1, columnspan=2, padx=10, pady=10)
         self.entry.grid(row=1, column=1, padx=10, pady=10)
+        self.button5.grid(row=2, column = 0, padx=10, pady=10)
+        self.button6.grid(row=2, column = 1, padx=10, pady=10)
         
         # початковий стан
         self.set_state("4B")
@@ -37,6 +39,8 @@ class Screen(tk.Frame):
         self.button2.grid_remove()
         self.button3.grid_remove()
         self.button4.grid_remove()
+        self.button5.grid_remove()
+        self.button6.grid_remove()
         self.label.grid_remove()
         self.entry.grid_remove()
         
