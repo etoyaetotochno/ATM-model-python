@@ -15,6 +15,9 @@ class Screen(tk.Frame):
         self.label.grid(row=0, column=1, columnspan=2, padx=10, pady=10)
         self.entry.grid(row=1, column=1, padx=10, pady=10)
         
+        # початковий стан
+        self.set_state("buttons")
+        
     def set_state(self, state):
         # прибрати усі елементи
         self.button1.grid_remove()
