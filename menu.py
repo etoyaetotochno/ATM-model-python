@@ -45,6 +45,18 @@ class Menu:
                 button = tk.Button(self.pinpad, text=str(value), width=10, height=2, command=lambda v=str(value): self.update_screen(v))
                 button.grid(row=i, column=j, padx=5, pady=5)
 
+        # бокові кнопки
+        side_buttons = ["СКАС", "КОРР", "ВІДМ", "ОК"]
+        for i in range(4):
+            button = tk.Button(self.pinpad, text=side_buttons[i], width=10, height=2, command=lambda v=side_buttons[i]: self.update_screen(v))
+            button.grid(row=i, column=3, padx=5, pady=5)
+
+        # нижні кнопки 0, 00
+        button_text = ["", "0", "00"]
+        for i in range(3):
+            button = tk.Button(self.pinpad, text=button_text[i], width=10, height=2, command=lambda v=button_text[i]: self.update_screen(v))
+            button.grid(row=3, column=i, padx=5, pady=5)
+
         # видавач готівки
         self.cash_dispenser = tk.Label(self.mainframe, text="Видавач готівки", width=40, height=2, relief="sunken")
         self.cash_dispenser.grid(column=0,row=4)
