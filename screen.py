@@ -33,6 +33,8 @@ class Screen(tk.Frame):
         # прибрати усі елементи
         self.button1.grid_remove()
         self.button2.grid_remove()
+        self.button3.grid_remove()
+        self.button4.grid_remove()
         self.label.grid_remove()
         self.entry.grid_remove()
         
