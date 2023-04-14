@@ -20,6 +20,17 @@ class Menu:
         # екран
         self.screen = Screen(self.screen_frame)
         self.screen.grid(row=0, column=0, rowspan=4, sticky="nsew")
+
+        # кнопки зліва від екрану
+        for i in range(4):
+            button = tk.Button(self.screen_place, text=">>", width=10, height=2, command=lambda v="L"+str(i): self.update_screen(v))
+            button.grid(row=i, column=0, padx=5)
+
+        # кнопки справа від екрану
+        for i in range(4):
+            button = tk.Button(self.screen_place, text="<<", width=10, height=2, command=lambda v="R"+str(i): self.update_screen(v))
+            button.grid(row=i, column=2, padx=5)
+
         # зчитувач карток
         self.cardreader = tk.Label(self.mainframe, text="Зчитувач карток", width=20, height=2, relief=tk.RAISED, borderwidth=1)
         self.cardreader.grid(column=0,row=2)
