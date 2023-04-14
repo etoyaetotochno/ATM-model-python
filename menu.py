@@ -29,3 +29,16 @@ class Menu:
         # видавач готівки
         self.cash_dispenser = tk.Label(self.mainframe, text="Видавач готівки", width=40, height=2, relief="sunken")
         self.cash_dispenser.grid(column=0,row=4)
+
+    # передача на екран
+    def update_screen(self, value):
+        print(f"Button {value} clicked")
+        if (value=="1"):
+            self.screen.set_state("buttons")
+        elif (value=="2"):
+            self.screen.set_state("text_and_input")
+        elif (value=="3"):
+            self.screen.set_state("text_and_2_buttons")
+        elif (value=="4"):
+            self.screen.set_state("text_and_entry_and_2_buttons")
+
