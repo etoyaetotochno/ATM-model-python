@@ -4,10 +4,10 @@ class Screen(tk.Frame):
     def __init__(self, master):
         tk.Frame.__init__(self, master)
 
-        self.button1 = tk.Button(self, text="Button 1")
-        self.button2 = tk.Button(self, text="Button 2")
-        self.button3 = tk.Button(self, text="Button 3")
-        self.button4 = tk.Button(self, text="Button 4")
+        self.button1 = tk.Button(self, text="Button 1", state="disabled")
+        self.button2 = tk.Button(self, text="Button 2", state="disabled")
+        self.button3 = tk.Button(self, text="Button 3", state="disabled")
+        self.button4 = tk.Button(self, text="Button 4", state="disabled")
         self.label = tk.Label(self, text="Label")
         self.entry = tk.Entry(self, state="disabled")
         
