@@ -34,6 +34,8 @@ class Screen(tk.Frame):
         self.entry.configure(state="disabled")
 
     def set_state(self, state):
+        self.state = state
+
         # прибрати усі елементи
         self.button1.grid_remove()
         self.button2.grid_remove()
