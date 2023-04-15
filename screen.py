@@ -14,8 +14,6 @@ class Screen(tk.Frame):
         self.entry = tk.Entry(self, state="disabled")
         
         # розмітка для елементів
-        self.button1.grid(row=0, column=0, padx=10, pady=10)
-        self.button2.grid(row=1, column=0, padx=10, pady=10)
         self.label.grid(row=0, column=1, columnspan=2, padx=10, pady=10)
         self.entry.grid(row=1, column=1, padx=10, pady=10)
         self.button5.grid(row=2, column = 0, padx=10, pady=10)
@@ -47,10 +45,10 @@ class Screen(tk.Frame):
         self.entry.grid_remove()
         
         if state == "4B":
-            self.button1.grid()
-            self.button2.grid()
-            self.button3.grid()
-            self.button4.grid()
+            self.button1.grid(row=0, column=0, sticky="E", padx=10, pady=10)
+            self.button2.grid(row=1, column=0, sticky="E", padx=10, pady=10)
+            self.button3.grid(row=2, column=0, sticky="E", padx=10, pady=10)
+            self.button4.grid(row=3, column=0, sticky="E", padx=10, pady=10)
         elif state == "T":
             self.label.config(text="Text")
             self.label.grid()
