@@ -14,10 +14,10 @@ class Screen(tk.ttk.Frame):
         self.entry = tk.Entry(self, state="disabled")
         
         # розмітка для елементів
-        self.button5.grid(row=2, column = 0, padx=10, pady=10)
-        self.button6.grid(row=2, column = 1, padx=10, pady=10)
         self.label.grid(row=0, column = 0, columnspan=2, padx=5, pady=5)
         self.entry.grid(row=1, column = 0, columnspan=2, padx=5, pady=5)
+        self.button5.grid(row=2, column = 0, sticky='w', padx=5, pady=5)
+        self.button6.grid(row=2, column = 1, sticky='e',padx=5, pady=5)
         
         # початковий стан
         self.set_state("4B")
