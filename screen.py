@@ -1,8 +1,8 @@
 import tkinter as tk
 
-class Screen(tk.Frame):
+class Screen(tk.ttk.Frame):
     def __init__(self, master):
-        tk.Frame.__init__(self, master)
+        tk.ttk.Frame.__init__(self, master)
 
         self.button1 = tk.Button(self, text="Button 1", state="disabled")
         self.button2 = tk.Button(self, text="Button 2", state="disabled")
