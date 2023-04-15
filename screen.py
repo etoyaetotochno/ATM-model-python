@@ -23,13 +23,14 @@ class Screen(tk.Frame):
         self.set_state("4B")
 
     def set_entry_text(self, text, mode):
-        self.entry.configure(state="normal")
-        if (mode == "d"):
-            self.entry.delete(0, tk.END)
-            self.entry.insert(0, text)
-        elif (mode == "a"):
-            self.entry.insert(0, text)
-        self.entry.configure(state="disabled")
+        if self.state == "TE" or self.state == "TE2B":
+            self.entry.configure(state="normal")
+            if (mode == "d"):
+                self.entry.delete(0, tk.END)
+                self.entry.insert(0, text)
+            elif (mode == "a"):
+                self.entry.insert(0, text)
+            self.entry.configure(state="disabled")
 
     def set_state(self, state):
         self.state = state
