@@ -14,8 +14,8 @@ class Screen(tk.Frame):
         self.entry = tk.Entry(self, state="disabled")
         
         # розмітка для елементів
-        self.label.grid(row=0, column=1, columnspan=2, padx=10, pady=10)
-        self.entry.grid(row=1, column=1, padx=10, pady=10)
+        self.label.grid(row=0, column = 0, columnspan=2, padx=10, pady=10)
+        self.entry.grid(row=1, column = 0, columnspan=2, padx=10, pady=10)
         self.button5.grid(row=2, column = 0, padx=10, pady=10)
         self.button6.grid(row=2, column = 1, padx=10, pady=10)
         
@@ -63,7 +63,9 @@ class Screen(tk.Frame):
             self.button6.grid()
         elif state == "TE2B":
             self.label.config(text="Text")
-            self.label.grid()
-            self.entry.grid()
+            self.label.grid(row=0, column = 0, columnspan=2, padx=10, pady=10)
+            self.entry.grid(row=1, column = 0, columnspan=2, padx=10, pady=10)
+            self.button5.grid()
+            self.button6.grid()
             self.button5.grid()
             self.button6.grid()
