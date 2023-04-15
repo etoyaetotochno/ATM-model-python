@@ -7,18 +7,18 @@ class Menu:
         self.root = root
 
         # головний фрейм
-        self.mainframe = ttk.Frame(self.root, relief=tk.RAISED, borderwidth=1)
-        self.mainframe.grid(column=0, row=0)
+        self.mainframe = ttk.Frame(self.root, relief=tk.RAISED)
+        self.mainframe.grid()
 
         # фрейм для екрану
-        self.screen_place = ttk.Frame(self.mainframe, padding="5 5 5 5", relief=tk.RAISED, borderwidth=1)
-        self.screen_place.grid(column=0, row=0)
+        self.screen_place = ttk.Frame(self.mainframe, relief=tk.RAISED, borderwidth=1)
+        self.screen_place.grid()
 
         #фрейм для вмісту екрану
-        self.screen_frame = ttk.Frame(self.screen_place, width=200, height=200, relief=tk.RAISED, borderwidth=1)
-        self.screen_frame.grid(column=1, row=0, rowspan=4, sticky="nsew")
-        self.screen_frame.columnconfigure(0, weight=0)
-        self.screen_frame.rowconfigure(0, weight=4)
+        self.screen_frame = ttk.Frame(self.screen_place, width=200, height=200)
+        self.screen_frame.grid(column=1, row=0, columnspan=2, rowspan=4)
+        self.screen_frame.grid_columnconfigure(0, weight=1)
+        self.screen_frame.grid_rowconfigure(0, weight=1)
         self.screen_frame.grid_propagate(False)
        
         # екран
