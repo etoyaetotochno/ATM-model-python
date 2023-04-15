@@ -59,7 +59,7 @@ class Screen(tk.ttk.Frame):
             self.entry.grid()
         elif state == "T2B":
             self.label.config(text="Text")
-            self.label.grid()
+            self.label.grid(row=0, column = 0, columnspan=2, rowspan=3, padx=10, pady=10)
             self.button5.grid()
             self.button6.grid()
         elif state == "TE2B":
@@ -68,8 +68,4 @@ class Screen(tk.ttk.Frame):
             self.entry.grid(row=1, column = 0, columnspan=2, padx=10, pady=10)
             self.button5.grid()
             self.button6.grid()
-        elif state == "T2B":
-            self.label.config(text="Text")
-            self.label.grid(row=0, column = 0, columnspan=2, rowspan=2, padx=10, pady=10)
-            self.button5.grid()
-            self.button6.grid()
+        
