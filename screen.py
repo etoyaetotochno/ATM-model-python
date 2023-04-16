@@ -1,10 +1,11 @@
 import tkinter as tk
+from tkinter import ttk
 from ScreenDecorators import clear, entry
 
-class Screen(tk.ttk.Frame):
+class Screen(ttk.Frame):
     def __init__(self, master):
         
-        tk.ttk.Frame.__init__(self, master)
+        ttk.Frame.__init__(self, master)
 
         self.button1 = tk.Button(self, text="Button 1", state="disabled", width=8, height=1)
         self.button2 = tk.Button(self, text="Button 2", state="disabled", width=8, height=1)
