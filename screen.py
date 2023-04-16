@@ -15,6 +15,9 @@ class Screen(tk.ttk.Frame):
 
         self.elements = (self.button1, self.button2, self.button3, self.button4, self.button5, self.button6, self.message, self.entry)
 
+        self.button5.grid(row=3, column = 0, sticky='w', padx=10, pady=10)
+        self.button6.grid(row=3, column = 1, sticky='e', padx=10, pady=10)
+
     def set_entry_text(self, text, mode):
         if self.state == "TE" or self.state == "TE2B":
             self.entry.configure(state="normal")
@@ -30,9 +33,6 @@ class Screen(tk.ttk.Frame):
 
     def set_state(self, state):
         self.state = state
-
-        self.button5.grid(row=3, column = 0, sticky='w', padx=10, pady=10)
-        self.button6.grid(row=3, column = 1, sticky='e', padx=10, pady=10)
         
         self.clear_elements()
 
