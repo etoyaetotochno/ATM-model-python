@@ -14,6 +14,9 @@ class ATMApp:
         self.screen.grid_columnconfigure(0, weight=1)
         self.screen.grid_rowconfigure(0, weight=1)
 
+        # початковий стан
+        self.screen.set_state("4B")
+
     def menu_callback(self, callback):
         self.update_screen(callback)
 

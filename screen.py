@@ -12,9 +12,6 @@ class Screen(tk.ttk.Frame):
         self.button6 = tk.Button(self, text="Button 6", state="disabled", width=8, height=1)
         self.message = tk.Message(self, justify=tk.CENTER, width=150)
         self.entry = tk.Entry(self, state="disabled")
-        
-        # початковий стан
-        self.set_state("4B")
 
     def set_entry_text(self, text, mode):
         if self.state == "TE" or self.state == "TE2B":
