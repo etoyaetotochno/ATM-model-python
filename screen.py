@@ -53,7 +53,7 @@ class Screen(tk.ttk.Frame):
         elif state == "TE":
             self.message.config(text="ЦЕ ТЕ")
             self.message.grid(row=0, column=0, columnspan=2, rowspan=3, padx=10, pady=10)
-            self.entry.grid(row=2, column=0, columnspan=2, padx=10, pady=10)
+            self.entry.grid(row=3, column=0, columnspan=2, padx=10, pady=10)
         elif state == "T2B":
             self.message.config(text="це Т2В")
             self.message.grid(row=0, column = 0, columnspan=2, rowspan=3, padx=10, pady=10)
