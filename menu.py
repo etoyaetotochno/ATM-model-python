@@ -3,8 +3,9 @@ from tkinter import ttk
 from screen import Screen
 
 class Menu:
-    def __init__(self, root):
+    def __init__(self, root, callback):
         self.root = root
+        self.callback = callback
 
         # головний фрейм
         self.mainframe = ttk.Frame(self.root, relief=tk.RAISED)
