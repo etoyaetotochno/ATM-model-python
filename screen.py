@@ -38,6 +38,9 @@ class Screen(tk.ttk.Frame):
     def set_state(self, state):
         self.state = state
 
+        self.button5.grid(row=3, column = 0, sticky='w', padx=10, pady=10)
+        self.button6.grid(row=3, column = 1, sticky='e', padx=10, pady=10)
+
         # прибрати усі елементи
         self.button1.grid_remove()
         self.button2.grid_remove()
