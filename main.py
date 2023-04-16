@@ -16,6 +16,21 @@ class ATMApp:
 
     def menu_callback(self, callback):
         self.update_screen(callback)
+
+    # передача на екран
+    def update_screen(self, value):
+        if (value=="1"):
+            self.screen.set_state("4B")
+        elif (value=="2"):
+            self.screen.set_state("TE")
+        elif (value=="3"):
+            self.screen.set_state("T2B")
+        elif (value=="4"):
+            self.screen.set_state("TE2B")
+        elif (value=="5"):
+            self.screen.set_entry_text("A","a")
+        elif (value=="6"):
+            self.screen.set_entry_text("A","d")
     def run(self):
         self.root.mainloop()
 if __name__ == "__main__":
