@@ -15,7 +15,7 @@ class ATMApp:
         self.screen.grid_rowconfigure(0, weight=1)
 
         # початковий стан
-        self.screen.set_state("4B")
+        self.screen.menu()
 
     def menu_callback(self, callback):
         self.update_screen(callback)
@@ -23,13 +23,13 @@ class ATMApp:
     # передача на екран
     def update_screen(self, value):
         if (value=="1"):
-            self.screen.set_state("4B")
+            self.screen.menu()
         elif (value=="2"):
-            self.screen.set_state("TE")
+            self.screen.TE(text="text")
         elif (value=="3"):
-            self.screen.set_state("T2B")
+            self.screen.T2B(text="text")
         elif (value=="4"):
-            self.screen.set_state("TE2B")
+            self.screen.TE2B(text="text")
         elif (value=="5"):
             self.screen.set_entry_text("A","a")
         elif (value=="6"):
