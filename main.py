@@ -5,7 +5,9 @@ class ATMApp:
         self.root = tk.Tk()
         self.root.geometry("400x500")
         self.root.title("ATM App")
-        self.menu = Menu(self.root)
+        self.menu = Menu(self.root, callback=self.menu_callback)
+    def menu_callback(self, callback):
+        self.update_screen(callback)
     def run(self):
         self.root.mainloop()
 if __name__ == "__main__":
