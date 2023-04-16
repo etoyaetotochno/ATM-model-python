@@ -19,7 +19,7 @@ class Screen(tk.ttk.Frame):
         self.button6.grid(row=3, column = 1, sticky='e', padx=10, pady=10)
 
     def set_entry_text(self, text, mode):
-        if self.state == "TE" or self.state == "TE2B":
+        if self.entry_visible:
             self.entry.configure(state="normal")
             if (mode == "d"):
                 self.clear_entry()
@@ -31,36 +31,44 @@ class Screen(tk.ttk.Frame):
     def clear_entry(self):
         self.entry.delete(0, tk.END)
 
-    def set_state(self, state):
-        self.state = state
-        
+    # states
+    def T(self, text):
         self.clear_elements()
+        self.message.config(text=text)
+        self.message.grid()
 
-        if state == "4B":
-            self.button1.grid(row=0, column=0, sticky="E", padx=10, pady=10)
-            self.button2.grid(row=1, column=0, sticky="E", padx=10, pady=10)
-            self.button3.grid(row=2, column=0, sticky="E", padx=10, pady=10)
-            self.button4.grid(row=3, column=0, sticky="E", padx=10, pady=10)
-        elif state == "T":
-            self.message.config(text="Text")
-            self.message.grid()
-        elif state == "TE":
-            self.message.config(text="ЦЕ ТЕ")
-            self.message.grid(row=0, column=0, columnspan=2, rowspan=3, padx=10, pady=10)
-            self.entry.grid(row=3, column=0, columnspan=2, padx=10, pady=10)
-        elif state == "T2B":
-            self.message.config(text="це Т2В")
-            self.message.grid(row=0, column = 0, columnspan=2, rowspan=3, padx=10, pady=10)
-            self.button5.grid()
-            self.button6.grid()
-        elif state == "TE2B":
-            self.message.config(text="це ТЕ2В, довгий текст")
-            self.message.grid(row=0, column = 0, columnspan=2, rowspan=2, padx=10, pady=10)
-            self.entry.grid(row=2, column = 0, columnspan=2, padx=10, pady=10)
-            self.button5.grid()
-            self.button6.grid()
+    def TE(self, text):
+        self.clear_elements()
+        self.entry_visible = True
+        self.message.config(text=text)
+        self.message.grid(row=0, column=0, columnspan=2, rowspan=3, padx=10, pady=10)
+        self.entry.grid(row=3, column=0, columnspan=2, padx=10, pady=10)
+
+    def T2B(self, text):
+        self.clear_elements()
+        self.message.config(text=text)
+        self.message.grid(row=0, column = 0, columnspan=2, rowspan=3, padx=10, pady=10)
+        self.button5.grid()
+        self.button6.grid()
+
+    def TE2B(self, text):
+        self.clear_elements()
+        self.entry_visible = True
+        self.message.config(text=text)
+        self.message.grid(row=0, column = 0, columnspan=2, rowspan=2, padx=10, pady=10)
+        self.entry.grid(row=2, column = 0, columnspan=2, padx=10, pady=10)
+        self.button5.grid()
+        self.button6.grid()
+
+    def menu(self):
+        self.clear_elements()
+        self.button1.grid(row=0, column=0, sticky="E", padx=10, pady=10)
+        self.button2.grid(row=1, column=0, sticky="E", padx=10, pady=10)
+        self.button3.grid(row=2, column=0, sticky="E", padx=10, pady=10)
+        self.button4.grid(row=3, column=0, sticky="E", padx=10, pady=10)
         
     def clear_elements(self):
         for element in self.elements:
             element.grid_remove()
+        self.entry_visible = False
 
