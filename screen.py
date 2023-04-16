@@ -3,6 +3,7 @@ from ScreenDecorators import clear, entry
 
 class Screen(tk.ttk.Frame):
     def __init__(self, master):
+        
         tk.ttk.Frame.__init__(self, master)
 
         self.button1 = tk.Button(self, text="Button 1", state="disabled", width=8, height=1)
