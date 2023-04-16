@@ -1,4 +1,5 @@
 import tkinter as tk
+from ScreenDecorators import clear, entry
 
 class Screen(tk.ttk.Frame):
     def __init__(self, master):
@@ -32,43 +33,38 @@ class Screen(tk.ttk.Frame):
         self.entry.delete(0, tk.END)
 
     # states
+    @clear
     def T(self, text):
-        self.clear_elements()
         self.message.config(text=text)
         self.message.grid(row=0, column=0, columnspan=2, rowspan=4, padx=10, pady=10)
 
+    @clear
+    @entry
     def TE(self, text):
-        self.clear_elements()
-        self.entry_visible = True
         self.message.config(text=text)
         self.message.grid(row=0, column=0, columnspan=2, rowspan=3, padx=10, pady=10)
         self.entry.grid(row=3, column=0, columnspan=2, padx=10, pady=10)
 
+    @clear
     def T2B(self, text):
-        self.clear_elements()
         self.message.config(text=text)
         self.message.grid(row=0, column = 0, columnspan=2, rowspan=3, padx=10, pady=10)
         self.button5.grid()
         self.button6.grid()
 
+    @clear
+    @entry
     def TE2B(self, text):
-        self.clear_elements()
-        self.entry_visible = True
         self.message.config(text=text)
         self.message.grid(row=0, column = 0, columnspan=2, rowspan=2, padx=10, pady=10)
         self.entry.grid(row=2, column = 0, columnspan=2, padx=10, pady=10)
         self.button5.grid()
         self.button6.grid()
 
+    @clear
     def menu(self):
-        self.clear_elements()
         self.button1.grid(row=0, column=0, sticky="E", padx=10, pady=10)
         self.button2.grid(row=1, column=0, sticky="E", padx=10, pady=10)
         self.button3.grid(row=2, column=0, sticky="E", padx=10, pady=10)
         self.button4.grid(row=3, column=0, sticky="E", padx=10, pady=10)
         
-    def clear_elements(self):
-        for element in self.elements:
-            element.grid_remove()
-        self.entry_visible = False
-
