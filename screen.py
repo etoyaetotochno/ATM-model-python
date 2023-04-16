@@ -4,13 +4,13 @@ class Screen(tk.ttk.Frame):
     def __init__(self, master):
         tk.ttk.Frame.__init__(self, master)
 
-        self.button1 = tk.Button(self, text="Button 1", state="disabled")
-        self.button2 = tk.Button(self, text="Button 2", state="disabled")
-        self.button3 = tk.Button(self, text="Button 3", state="disabled")
-        self.button4 = tk.Button(self, text="Button 4", state="disabled")
-        self.button5 = tk.Button(self, text="Button 5", state="disabled")
-        self.button6 = tk.Button(self, text="Button 6", state="disabled")
         self.label = tk.Label(self, text="Label")
+        self.button1 = tk.Button(self, text="Button 1", state="disabled", width=8, height=1)
+        self.button2 = tk.Button(self, text="Button 2", state="disabled", width=8, height=1)
+        self.button3 = tk.Button(self, text="Button 3", state="disabled", width=8, height=1)
+        self.button4 = tk.Button(self, text="Button 4", state="disabled", width=8, height=1)
+        self.button5 = tk.Button(self, text="Button 5", state="disabled", width=8, height=1)
+        self.button6 = tk.Button(self, text="Button 6", state="disabled", width=8, height=1)
         self.entry = tk.Entry(self, state="disabled")
         
         # розмітка для елементів
