@@ -8,11 +8,11 @@ class Menu:
         self.callback = callback
 
         # головний фрейм
-        self.mainframe = ttk.Frame(self.root, relief=tk.RAISED)
+        self.mainframe = ttk.Frame(self.root)
         self.mainframe.grid()
 
         # фрейм для екрану
-        self.screen_place = ttk.Frame(self.mainframe, relief=tk.RAISED, borderwidth=1)
+        self.screen_place = ttk.Frame(self.mainframe, relief=tk.SOLID, borderwidth=1)
         self.screen_place.grid()
 
         #фрейм для вмісту екрану
