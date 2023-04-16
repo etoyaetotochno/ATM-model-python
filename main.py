@@ -10,7 +10,7 @@ class ATMApp:
         self.menu = Menu(self.root, callback=self.menu_callback)
 
         self.screen = Screen(self.menu.screen_frame)
-        self.screen.grid(sticky="ew")
+        self.screen.grid(sticky="sew")
         self.screen.grid_columnconfigure(0, weight=1)
         self.screen.grid_rowconfigure(0, weight=1)
 
