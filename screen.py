@@ -17,8 +17,8 @@ class Screen(tk.ttk.Frame):
 
         self.elements = (self.button1, self.button2, self.button3, self.button4, self.button5, self.button6, self.message, self.entry)
 
-        self.button5.grid(row=3, column = 0, sticky='w', padx=10, pady=10)
-        self.button6.grid(row=3, column = 1, sticky='e', padx=10, pady=10)
+        self.button5.grid(row=3, column = 0, sticky='w', padx=10, pady=12)
+        self.button6.grid(row=3, column = 1, sticky='e', padx=10, pady=12)
 
     def set_entry_text(self, text, mode):
         if self.entry_visible:
@@ -65,8 +65,8 @@ class Screen(tk.ttk.Frame):
 
     @clear
     def menu(self):
-        self.button1.grid(row=0, column=0, sticky="E", padx=10, pady=10)
-        self.button2.grid(row=1, column=0, sticky="E", padx=10, pady=10)
-        self.button3.grid(row=2, column=0, sticky="E", padx=10, pady=10)
-        self.button4.grid(row=3, column=0, sticky="E", padx=10, pady=10)
+        self.button1.grid(row=0, column=0, sticky="ne", padx=10, pady=12)
+        self.button2.grid(row=1, column=0, sticky="ne", padx=10, pady=12)
+        self.button3.grid(row=2, column=0, sticky="ne", padx=10, pady=12)
+        self.button4.grid(row=3, column=0, sticky="ne", padx=10, pady=12)
         
