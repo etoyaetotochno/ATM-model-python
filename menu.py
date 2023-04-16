@@ -3,6 +3,7 @@ from tkinter import ttk
 
 class Menu:
     def __init__(self, root, callback):
+        
         self.root = root
         self.callback = callback
 
@@ -34,6 +35,7 @@ class Menu:
         # зчитувач карток
         self.cardreader = tk.Label(self.mainframe, text="Зчитувач карток", width=20, height=2, relief=tk.RAISED, borderwidth=1)
         self.cardreader.grid(column=0,row=2)
+
         # фрейм для кнопок
         self.pinpad = tk.Frame(self.mainframe, width=200, height=200, relief=tk.RAISED, borderwidth=1)
         self.pinpad.grid(column=0,row=3)
