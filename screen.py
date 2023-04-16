@@ -37,6 +37,7 @@ class Screen(tk.ttk.Frame):
     def T(self, text):
         self.message.config(text=text)
         self.message.grid(row=0, column=0, columnspan=2, rowspan=4, padx=10, pady=10)
+        self.grid(sticky="ew")
 
     @clear
     @entry

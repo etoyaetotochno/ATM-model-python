@@ -3,6 +3,7 @@ def clear(func):
         for element in self.elements:
             element.grid_remove()
         self.entry_visible = False
+        self.grid(sticky="sew")
         func(self, *args, **kwargs)
     return wrapper
 
