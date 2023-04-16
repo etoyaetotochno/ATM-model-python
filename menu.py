@@ -23,7 +23,7 @@ class Menu:
        
         # екран
         self.screen = Screen(self.screen_frame)
-        self.screen.grid(sticky="sew")
+        self.screen.grid(sticky="nsew")
         self.screen.grid_columnconfigure(0, weight=1)
         self.screen.grid_rowconfigure(0, weight=1)
 
