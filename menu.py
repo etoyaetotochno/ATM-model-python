@@ -1,6 +1,5 @@
 import tkinter as tk
 from tkinter import ttk
-from screen import Screen
 
 class Menu:
     def __init__(self, root, callback):
@@ -21,12 +20,6 @@ class Menu:
         self.screen_frame.grid_columnconfigure(0, weight=1)
         self.screen_frame.grid_rowconfigure(0, weight=1)
         self.screen_frame.grid_propagate(False)
-       
-        # екран
-        self.screen = Screen(self.screen_frame)
-        self.screen.grid(sticky="nsew")
-        self.screen.grid_columnconfigure(0, weight=1)
-        self.screen.grid_rowconfigure(0, weight=1)
 
         # кнопки зліва від екрану
         for i in range(4):
