@@ -13,6 +13,8 @@ class Screen(tk.ttk.Frame):
         self.message = tk.Message(self, justify=tk.CENTER, width=150)
         self.entry = tk.Entry(self, state="disabled")
 
+        self.elements = (self.button1, self.button2, self.button3, self.button4, self.button5, self.button6, self.message, self.entry)
+
     def set_entry_text(self, text, mode):
         if self.state == "TE" or self.state == "TE2B":
             self.entry.configure(state="normal")
