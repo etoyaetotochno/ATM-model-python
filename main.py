@@ -15,7 +15,7 @@ class ATMApp:
         self.screen.grid_rowconfigure(0, weight=1)
 
         # початковий стан
-        self.screen.menu()
+        self.screen.T("Вставте картку")
 
     def menu_callback(self, callback):
         self.update_screen(callback)

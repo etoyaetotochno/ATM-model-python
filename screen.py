@@ -10,8 +10,8 @@ class Screen(tk.ttk.Frame):
         self.button2 = tk.Button(self, text="Button 2", state="disabled", width=8, height=1)
         self.button3 = tk.Button(self, text="Button 3", state="disabled", width=8, height=1)
         self.button4 = tk.Button(self, text="Button 4", state="disabled", width=8, height=1)
-        self.button5 = tk.Button(self, text="Button 5", state="disabled", width=8, height=1)
-        self.button6 = tk.Button(self, text="Button 6", state="disabled", width=8, height=1)
+        self.button5 = tk.Button(self, text="Назад", state="disabled", width=8, height=1)
+        self.button6 = tk.Button(self, text="Далі", state="disabled", width=8, height=1)
         self.message = tk.Message(self, justify=tk.CENTER, width=150)
         self.entry = tk.Entry(self, state="disabled")
 
