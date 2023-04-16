@@ -33,17 +33,9 @@ class Screen(tk.ttk.Frame):
 
         self.button5.grid(row=3, column = 0, sticky='w', padx=10, pady=10)
         self.button6.grid(row=3, column = 1, sticky='e', padx=10, pady=10)
-
-        # прибрати усі елементи
-        self.button1.grid_remove()
-        self.button2.grid_remove()
-        self.button3.grid_remove()
-        self.button4.grid_remove()
-        self.button5.grid_remove()
-        self.button6.grid_remove()
-        self.message.grid_remove()
-        self.entry.grid_remove()
         
+        self.clear_elements()
+
         if state == "4B":
             self.button1.grid(row=0, column=0, sticky="E", padx=10, pady=10)
             self.button2.grid(row=1, column=0, sticky="E", padx=10, pady=10)
@@ -68,3 +60,7 @@ class Screen(tk.ttk.Frame):
             self.button5.grid()
             self.button6.grid()
         
+    def clear_elements(self):
+        for element in self.elements:
+            element.grid_remove()
+
