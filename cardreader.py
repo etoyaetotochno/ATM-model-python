@@ -28,3 +28,9 @@ class Cardreader(ttk.Frame):
         self.cardreader.configure(state="disabled")
         self.dropdown.configure(state="disabled")
 
+    def enable_reader(self):
+        self.cardreader.configure(state="active")
+        self.dropdown.configure(state="active")
+
+    def clear_reader(self):
+        self.dropdown.set('')
