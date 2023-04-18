@@ -26,3 +26,15 @@ class BankDatabase:
         else:
             return False
 
+    @pin_required
+    def check_balance(self, card, pin):
+        return self.db[card]["Balance"]
+
+    @pin_required
+    def reduce_balance(self, card, pin, amount):
+        balance = int(self.db[card]["Balance"])
+        if balance - amount >= 0:
+            self.db[card]["Balance"] = str(balance-amount)
+            return True
+        else:
+            return False
