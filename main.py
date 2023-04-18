@@ -110,6 +110,15 @@ class ATMApp:
             self.screen.clear_entry()
             self.state = self.back_to_menu
         del self.dispense_amount
+
+    def back_to_menu(self, callback):
+        if callback == "L3":
+            self.screen.menu()
+            self.state = self.menu_state
+            if self.dispense:
+                self.menu.cash_dispenser.configure(text="Видача")
+                self.dispense = False
+
     def parse_cards(self):
         self.credit_cards = []
         with open('cards.txt', 'r') as file:
