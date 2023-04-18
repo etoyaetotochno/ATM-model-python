@@ -32,7 +32,16 @@ class ATMApp:
         self.cardreader.grid(column=0, row=2, padx=10, pady=10)
 
     def menu_callback(self, callback):
-        self.update_screen(callback)
+        if self.screen.entry_visible:
+            try:
+                if int(callback) in range(0,10):
+                    self.screen.set_entry_text(callback)
+            except:
+                # очищення тексту
+                if self.screen.entry_visible and callback == "КОРР":
+                    self.screen.clear_entry()
+        if self.state:
+            self.state(callback)
 
     def cardreader_callback(self, callback):
         self.current_card = callback
