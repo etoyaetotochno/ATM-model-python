@@ -66,6 +66,9 @@ class ATMApp:
             self.state = self.cash_1
         # баланс
         elif callback == "R1":
+            amount = self.db.check_balance(self.current_card, self.PIN)
+            self.screen.back("Поточний баланс:\n"+amount)
+            self.state = self.back_to_menu
         # поповнення
         elif callback == "R2":
         # вихід
