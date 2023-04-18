@@ -8,7 +8,7 @@ class ATMApp:
     def __init__(self):
         
         self.root = tk.Tk()
-        self.root.geometry("400x500")
+        self.root.geometry("380x520")
         self.root.title("ATM App")
         self.menu = Menu(self.root, callback=self.menu_callback)
 
