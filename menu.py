@@ -56,7 +56,7 @@ class Menu:
         # нижні кнопки 0, 00
         button_text = ["", "0", "00"]
         for i in range(3):
-            button = tk.Button(self.pinpad, text=button_text[i], width=10, height=2, command=lambda v=button_text[i]: self.button_clicked(v))
+            button = tk.Button(self.pinpad, text=button_text[i], width=10, height=2, command=lambda v=button_text[i]: self.button_clicked(v) if i != 0 else None)
             button.grid(row=3, column=i, padx=5, pady=5)
 
         # видавач готівки
