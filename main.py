@@ -19,6 +19,8 @@ class ATMApp:
 
         # початковий стан
         self.screen.T("Вставте картку")
+        self.state = None
+
         # завантажити карти
         self.parse_cards()
 
@@ -31,6 +33,12 @@ class ATMApp:
 
     def menu_callback(self, callback):
         self.update_screen(callback)
+
+    def cardreader_callback(self, callback):
+        self.current_card = callback
+        self.screen.TE(text="Введіть пін-код")
+        self.state = self.pin
+
 
     # передача на екран
     def update_screen(self, value):
