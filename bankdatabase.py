@@ -1,3 +1,4 @@
+import csv
 class BankDatabase:
     def __init__(self):
         self.parse_db()
