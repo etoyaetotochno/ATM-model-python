@@ -70,4 +70,9 @@ class Screen(ttk.Frame):
         self.button2.grid(row=1, column=0, sticky="ne", padx=10, pady=12)
         self.button3.grid(row=2, column=0, sticky="ne", padx=10, pady=12)
         self.button4.grid(row=3, column=0, sticky="ne", padx=10, pady=12)
-        
+
+    @clear        
+    def back(self, text):
+        self.message.config(text=text)
+        self.message.grid(row=0, column = 0, columnspan=2, rowspan=3, padx=10, pady=10)
+        self.button5.grid()
