@@ -73,6 +73,12 @@ class ATMApp:
         elif callback == "R2":
         # вихід
         elif callback == "R3":
+            self.current_card, self.PIN = None, None
+            self.cardreader.clear_reader()
+            self.cardreader.enable_reader()
+            self.screen.T("Вставте картку")
+            self.state = None
+
     def cash_1(self, callback):
         if callback == "L3":
             self.screen.menu()
