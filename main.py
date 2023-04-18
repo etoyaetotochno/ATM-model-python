@@ -62,13 +62,29 @@ class ATMApp:
     def menu_state(self, callback):
         # видача готівки
         if callback == "R0":
+            self.screen.TE2B("Видача готівки\nВведіть суму кратну 100:")
+            self.state = self.cash_1
         # баланс
         elif callback == "R1":
         # поповнення
         elif callback == "R2":
         # вихід
         elif callback == "R3":
+    def cash_1(self, callback):
+        if callback == "L3":
             self.screen.menu()
+            self.screen.clear_entry()
+            self.state = self.menu_state
+        elif callback == "R3" and self.screen.entry.get().isdigit():
+            self.dispense_amount = int(self.screen.entry.get())
+            if self.dispense_amount % 100 == 0:
+                self.screen.clear_entry()
+                self.screen.T2B("Видача готівки\nСума: "+str(self.dispense_amount)+"\nПідтвердити?")
+            else:
+                self.screen.back("Помилка!\nНеправильна сума\nСума має бути кратна 100")
+                self.screen.clear_entry()
+                self.state = self.back_to_menu
+                del self.dispense_amount
 
     def parse_cards(self):
         self.credit_cards = []
