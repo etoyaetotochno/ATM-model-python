@@ -1,4 +1,13 @@
 import csv
+
+def pin_required(func):
+        def wrapper(self, *args, **kwargs):
+            if self.check_card(*args[:2], **kwargs):
+                return func(self, *args, **kwargs)
+            else:
+                return -1
+        return wrapper
+
 class BankDatabase:
     def __init__(self):
         self.parse_db()
