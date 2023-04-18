@@ -169,6 +169,7 @@ class ATMApp:
 
     def run(self):
         self.root.mainloop()
+
 if __name__ == "__main__":
     atm_app = ATMApp()
     atm_app.run()
