@@ -19,3 +19,26 @@ def sum_digits(digit):
         sum = (digit % 10) + (digit // 10)
         return sum
 
+def count_banknotes(amount):
+    denominations = [1000, 500, 200, 100]
+    count_1000 = 0
+    count_500 = 0
+    count_200 = 0
+    count_100 = 0
+
+    for denomination in denominations:
+        if amount >= denomination:
+            count = amount // denomination
+            amount %= denomination
+            if denomination == 1000:
+                count_1000 = count
+            elif denomination == 500:
+                count_500 = count
+            elif denomination == 200:
+                count_200 = count
+            elif denomination == 100:
+                count_100 = count
+
+    result = f"{count_1000}x1000грн, {count_500}x500грн, {count_200}x200грн, {count_100}x100грн"
+
+    return result
