@@ -60,7 +60,7 @@ class Menu:
             button.grid(row=3, column=i, padx=5, pady=5)
 
         # видавач готівки
-        self.cash_dispenser = tk.Label(self.mainframe, text="Видавач готівки", width=40, height=2, relief="sunken")
+        self.cash_dispenser = tk.Label(self.mainframe, text="Видача", width=40, height=2, relief="sunken")
         self.cash_dispenser.grid(column=0,row=4)
 
     # натиск кнопки
