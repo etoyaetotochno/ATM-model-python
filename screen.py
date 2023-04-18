@@ -32,7 +32,9 @@ class Screen(ttk.Frame):
             self.entry.configure(state="disabled")
 
     def clear_entry(self):
+        self.entry.configure(state="normal")
         self.entry.delete(0, tk.END)
+        self.entry.configure(state="disabled")
 
     # states
     @clear
