@@ -48,6 +48,16 @@ class ATMApp:
         self.screen.TE(text="Введіть пін-код")
         self.state = self.pin
 
+    def pin(self, callback):
+        if callback == "ОК":
+            self.PIN = self.screen.entry.get()
+            if self.db.check_card(self.current_card, self.PIN):
+                self.screen.clear_entry()
+                self.screen.menu()
+                self.state = self.menu_state
+            else:
+                self.screen.TE("Неправильний пін-код\nСпробуйте ще раз")
+                self.screen.clear_entry()
 
     def menu_state(self, callback):
         # видача готівки
