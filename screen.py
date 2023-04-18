@@ -21,15 +21,13 @@ class Screen(ttk.Frame):
         self.button5.grid(row=3, column = 0, sticky='w', padx=10, pady=12)
         self.button6.grid(row=3, column = 1, sticky='e', padx=10, pady=12)
 
-    def set_entry_text(self, text, mode):
-        if self.entry_visible:
+    def set_entry_text(self, text):
+        if self.entry_visible and len(self.entry.get()) < 12:
             self.entry.configure(state="normal")
-            if (mode == "d"):
-                self.clear_entry()
-                self.entry.insert(0, text)
-            elif (mode == "a"):
-                self.entry.insert(0, text)
+            print("entered:", text)
+            self.entry.insert(tk.END, text)
             self.entry.configure(state="disabled")
+            
 
     def clear_entry(self):
         self.entry.configure(state="normal")
