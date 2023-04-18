@@ -18,6 +18,12 @@ class ATMApp:
 
         # початковий стан
         self.screen.T("Вставте картку")
+        # завантажити базу даних
+        self.db = BankDatabase()
+
+        # зчитувач карток
+        self.cardreader = Cardreader(self.menu.mainframe, cards=self.credit_cards, callback=self.cardreader_callback)
+        self.cardreader.grid(column=0, row=2, padx=10, pady=10)
 
     def menu_callback(self, callback):
         self.update_screen(callback)
