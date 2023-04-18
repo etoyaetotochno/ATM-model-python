@@ -71,6 +71,8 @@ class ATMApp:
             self.state = self.back_to_menu
         # поповнення
         elif callback == "R2":
+            self.screen.TE2B("Поповнення телефону\nВведіть номер телефону:")
+            self.state = self.payment_1
         # вихід
         elif callback == "R3":
             self.current_card, self.PIN = None, None
@@ -78,6 +80,43 @@ class ATMApp:
             self.cardreader.enable_reader()
             self.screen.T("Вставте картку")
             self.state = None
+
+    def payment_1(self, callback):
+        if callback == "L3":
+            self.screen.menu()
+            self.state = self.menu_state
+        elif callback == "R3":
+            self.phone = self.screen.entry.get()
+            self.screen.clear_entry()
+            if not util.check_phone(self.phone):
+                self.screen.back("Помилка!\nНеправильний номер телефону")
+                del self.phone
+                self.state = self.back_to_menu
+            else:
+                self.screen.TE2B("Введіть суму поповнення:")
+                self.state = self.payment_2
+
+    def payment_2(self, callback):
+        if callback == "L3":
+            self.screen.clear_entry()
+            self.menu_state("R2")
+        elif callback == "R3" and self.screen.entry.get().isdigit():
+            self.payment_amount = int(self.screen.entry.get())
+            self.screen.clear_entry()
+            self.screen.T2B("Поповнення\nСума: "+str(self.payment_amount)+"\nТелефон: "+str(self.phone)+"\nПідтвердити?")
+            self.state = self.payment_3
+
+    def payment_3(self, callback):
+        if callback == "L3":
+            self.menu_state("R2")
+        elif callback == "R3":
+            self.screen.clear_entry()
+            if self.db.reduce_balance(self.current_card, self.PIN, self.payment_amount):
+                self.screen.back("Поповнення успішне\nСума: "+str(self.payment_amount)+"\nТелефон: "+str(self.phone))
+            else:
+                self.screen.back("Помилка!\nНедостатньо коштів")
+            del self.payment_amount
+            self.state = self.back_to_menu
 
     def cash_1(self, callback):
         if callback == "L3":

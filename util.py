@@ -19,6 +19,15 @@ def sum_digits(digit):
         sum = (digit % 10) + (digit // 10)
         return sum
 
+def check_phone(phone):
+    if len(phone) != 10:
+        return False
+    if not phone.startswith("0"):
+        return False
+    if not phone.isdigit():
+        return False
+    return True
+
 def count_banknotes(amount):
     denominations = [1000, 500, 200, 100]
     count_1000 = 0
