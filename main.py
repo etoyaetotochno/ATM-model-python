@@ -80,12 +80,27 @@ class ATMApp:
             if self.dispense_amount % 100 == 0:
                 self.screen.clear_entry()
                 self.screen.T2B("Видача готівки\nСума: "+str(self.dispense_amount)+"\nПідтвердити?")
+                self.state = self.cash_2
             else:
                 self.screen.back("Помилка!\nНеправильна сума\nСума має бути кратна 100")
                 self.screen.clear_entry()
                 self.state = self.back_to_menu
                 del self.dispense_amount
 
+    def cash_2(self, callback):
+        if callback == "L3":
+            self.menu_state("R0")
+            self.screen.clear_entry()
+        elif callback == "R3":
+            if self.db.reduce_balance(self.current_card, self.PIN, self.dispense_amount):
+                self.screen.back("Готівку видано\nСума: "+str(self.dispense_amount))
+                self.menu.cash_dispenser.configure(text=util.count_banknotes(self.dispense_amount))
+                self.dispense = True
+            else:
+                self.screen.back("Помилка!\nНедостатньо коштів")
+            self.screen.clear_entry()
+            self.state = self.back_to_menu
+        del self.dispense_amount
     def parse_cards(self):
         self.credit_cards = []
         with open('cards.txt', 'r') as file:
