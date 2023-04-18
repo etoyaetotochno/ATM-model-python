@@ -40,20 +40,16 @@ class ATMApp:
         self.state = self.pin
 
 
-    # передача на екран
-    def update_screen(self, value):
-        if (value=="1"):
+    def menu_state(self, callback):
+        # видача готівки
+        if callback == "R0":
+        # баланс
+        elif callback == "R1":
+        # поповнення
+        elif callback == "R2":
+        # вихід
+        elif callback == "R3":
             self.screen.menu()
-        elif (value=="2"):
-            self.screen.TE(text="text")
-        elif (value=="3"):
-            self.screen.T2B(text="text")
-        elif (value=="4"):
-            self.screen.TE2B(text="text")
-        elif (value=="5"):
-            self.screen.set_entry_text("A","a")
-        elif (value=="6"):
-            self.screen.set_entry_text("A","d")
 
     def parse_cards(self):
         self.credit_cards = []
