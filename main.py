@@ -1,6 +1,8 @@
 import tkinter as tk
 from menu import Menu
 from screen import Screen
+from cardreader import Cardreader
+from bankdatabase import BankDatabase
 
 class ATMApp:
     def __init__(self):
