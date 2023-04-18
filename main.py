@@ -18,6 +18,9 @@ class ATMApp:
 
         # початковий стан
         self.screen.T("Вставте картку")
+        # завантажити карти
+        self.parse_cards()
+
         # завантажити базу даних
         self.db = BankDatabase()
 
@@ -42,6 +45,16 @@ class ATMApp:
             self.screen.set_entry_text("A","a")
         elif (value=="6"):
             self.screen.set_entry_text("A","d")
+
+    def parse_cards(self):
+        self.credit_cards = []
+        with open('cards.txt', 'r') as file:
+            lines = file.readlines()
+            for line in lines:
+                card_number = line.strip()
+                if util.luhn(card_number):
+                    self.credit_cards.append(card_number)
+
     def run(self):
         self.root.mainloop()
 if __name__ == "__main__":
