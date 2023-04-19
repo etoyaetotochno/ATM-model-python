@@ -31,6 +31,8 @@ class ATMApp:
         self.cardreader = Cardreader(self.menu.mainframe, cards=self.credit_cards, callback=self.cardreader_callback)
         self.cardreader.grid(column=0, row=2, padx=10, pady=10)
 
+        self.dispense = False
+
     def menu_callback(self, callback):
         if self.screen.entry_visible:
             try:
