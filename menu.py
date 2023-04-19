@@ -32,9 +32,6 @@ class Menu:
             button = tk.Button(self.screen_place, text="<<", width=10, height=2, command=lambda v="R"+str(i): self.button_clicked(v))
             button.grid(row=i, column=3, padx=5)
 
-        # зчитувач карток
-
-
         # фрейм для кнопок
         self.pinpad = tk.Frame(self.mainframe, width=200, height=200, relief=tk.RAISED, borderwidth=1)
         self.pinpad.grid(column=0,row=3)
